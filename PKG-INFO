@@ -1,0 +1,22 @@
+Metadata-Version: 1.0
+Name: pydare
+Version: 0.2
+Summary: Discrete Riccati and Lyapunov Equation solvers
+Home-page: http://jeff.rainbow-100.com
+Author: Jeffrey Armstrong
+Author-email: jeff@rainbow-100.com
+License: GPL
+Description: This small package contains two Python routines for solving the
+        discrete-time Riccati Equation (DARE) and the discrete-time
+        Lyapunov Equation.  These routines were developed in support
+        of a controls-related research project.  Both solvers were
+        developed into a minimally functional set of routines to 
+        satisfy the project for which they were originally meant. 
+        However, this functionality may be sufficient for other users
+        as well.  Note that the pydare package does not include 
+        routines for solving continuous versions of these two equation
+        sets.
+Keywords: dare lyapunov riccati
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Mathematics

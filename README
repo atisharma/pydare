@@ -1,0 +1,110 @@
+Discrete Riccati Equation and Lyapunov Equation Solvers
+=======================================================
+
+This small package contains two Python routines for solving the
+discrete-time Riccati Equation (DARE) and the discrete-time
+Lyapunov Equation.  These routines were developed in support
+of a controls-related research project.  Both solvers were
+developed into a minimally functional set of routines to 
+satisfy the project for which they were originally meant. 
+However, this functionality may be sufficient for other users
+as well.  Note that the pydare package does not include 
+routines for solving continuous versions of these two equation
+sets.
+
+Requirements
+============
+
+	* NumPy - http://numpy.scipy.org/
+	* A Python interpretter compatible with NumPy
+	
+The routines were tested under Python 2.5 and 2.6.
+
+Additionally, this package can take advantage of (but does not
+require):
+
+    * Slycot - https://github.com/avventi/Slycot
+
+Methods - DARE
+==============
+
+The DareSolver class has four separate implementations of 
+DARE solvers:
+
+	* Direct using a Schur method
+	* An iterative cyclic reduction method
+	* An iterative Newton's method
+    * Direct using SLICOT SB02OD implementation (via Slycot)
+	
+More information is available using
+	
+	>>> help(pydare.DareSolver)
+	
+Methods - Discrete Lyapunov
+===========================
+
+Three functions are provided for solving the discrete-time Lyapunov 
+equation:
+
+	* An iterative solver
+	* Direct using a Schur method based on an Octave implementation
+    * Direct using SLICOT SB03MD implementation (via Slycot)
+
+More information is available using
+
+	>>> help(pydare.dylap)
+	
+Usage - DARE
+============
+
+A solver object is initialized by passing A, B, Q, and R matrices (NumPy matrix 
+objects) to the constructor.  The default solver is the direct Schur method.  To
+select other methods, the following members of the solver object can be set:
+
+	>>> solver.iterative = True   # To utilize the iterative Newton method
+	
+	>>> solver.use_cyclic = True  # To utilize the cyclic reduction method
+	
+Finally, the solve() method will return the calculated solution if the solver
+was successful.
+
+Testing
+=======
+
+An extremely basic test suite is included in the 'test' directory.  These tests
+are present mainly to ensure minimal functionality.  If Slycot is not
+installed, the Slycot-associated tests will fail.
+
+Support
+=======
+
+This package is not officially "supported," but additions and corrections can be
+added by sending specifics to Jeff Armstrong at jeff@rainbow-100.com.  As this
+package is functional to the point where it is acceptable for its original 
+purpose, future additions are somewhat unlikely.
+
+Also, this package is released under a free software license, so anyone should
+feel free to distribute changes as they see fit as long as the distribution is
+compatible with the GNU General Public License Version 3 or higher.
+
+Copyright
+=========
+
+Copyright (C) 2010 Jeffrey Armstrong <jeff@rainbow-100.com>
+http://jeff.rainbow-100.com/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+A full version of the license terms is available in LICENSE.
+
