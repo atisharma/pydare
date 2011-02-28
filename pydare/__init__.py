@@ -1,3 +1,3 @@
 
-from dlyap import dlyap
-from dare import DareSolver
+from pydare.dlyap import dlyap
+from pydare.dare import DareSolver

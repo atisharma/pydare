@@ -22,7 +22,8 @@ import numpy.linalg
 import scipy.linalg
 import warnings
 
-from dlyap import dlyap
+#from dlyap import dlyap
+from pydare.dlyap import dlyap
 
 try:
     import slycot

@@ -12,12 +12,12 @@ routines for solving continuous versions of these two equation
 sets."""
 
 setup(name='pydare',
-	  version='0.2',
+	  version='0.3',
 	  description='Discrete Riccati and Lyapunov Equation solvers',
 	  long_description=LONG_DESC,
 	  author='Jeffrey Armstrong',
 	  author_email='jeff@rainbow-100.com',
-	  url='http://jeff.rainbow-100.com',
+	  url='https://code.google.com/p/pydare/',
 	  packages=['pydare',],
 	  license='GPL',
 	  classifiers=['Intended Audience :: Developers', 'Topic :: Mathematics'],

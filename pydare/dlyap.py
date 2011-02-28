@@ -23,7 +23,6 @@
 import numpy
 import numpy.linalg
 import scipy.linalg
-import scipy.linalg.basic
 import warnings
 import math
 
@@ -126,7 +125,7 @@ def dlyap_schur(a,q):
                 blocksize = 2
                 j = j - 1
 
-        Ajj = scipy.linalg.basic.kron(s[j:j1,:][:,j:j1] ,s) - numpy.eye(blocksize*n)
+        Ajj = scipy.linalg.kron(s[j:j1,:][:,j:j1] ,s) - numpy.eye(blocksize*n)
         
         rhs = numpy.reshape(b[:,j:j1], (blocksize*n, 1))
         
