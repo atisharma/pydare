@@ -107,16 +107,16 @@ class DareSolver:
         z12 = -1.0*g*fit
         z21 = -1.0*fit*self.q
         z22 = fit
-        z = numpy.vstack((numpy.hstack((z11,z12)),numpy.hstack((z21,z22))))
+        z = numpy.vstack((numpy.hstack((z11, z12)), numpy.hstack((z21, z22))))
         
-        [s,u] = scipy.linalg.schur(numpy.linalg.inv(z))
+        [s,u] = scipy.linalg.schur(numpy.linalg.inv(z), sort='lhp')
 
         (m,n) = u.shape
         
-        u11 = u[0:m/2,0:n/2]
-        u12 = u[0:m/2,n/2:n]
-        u21 = u[m/2:m,0:n/2]
-        u22 = u[m/2:m,n/2:n]
+        u11 = u[0:m/2, 0:n/2]
+        u12 = u[0:m/2, n/2:n]
+        u21 = u[m/2:m, 0:n/2]
+        u22 = u[m/2:m, n/2:n]
         u11i = numpy.linalg.inv(u11)
 
         self.solution =  numpy.asmatrix(u21)*numpy.asmatrix(u11i)

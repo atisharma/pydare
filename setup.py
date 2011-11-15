@@ -21,7 +21,6 @@ setup(name='pydare',
 	  packages=['pydare',],
 	  license='GPL',
 	  classifiers=['Intended Audience :: Developers', 'Topic :: Mathematics'],
-	  install_requires=['numpy',],
+	  install_requires=['numpy','scipy>=0.10.0'],
 	  keywords='dare lyapunov riccati',
 	 )
-	  
