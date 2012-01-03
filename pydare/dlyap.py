@@ -105,7 +105,7 @@ def dlyap_schur(a,q):
     if m != n:
         raise ValueError("input 'a' must be square") 
         
-    [s,u] = scipy.linalg.schur(a)
+    [s, u, sdim] = scipy.linalg.schur(a, sort='lhp')
     
     s = numpy.asmatrix(s)
     u = numpy.asmatrix(u)

@@ -109,7 +109,7 @@ class DareSolver:
         z22 = fit
         z = numpy.vstack((numpy.hstack((z11, z12)), numpy.hstack((z21, z22))))
         
-        [s,u] = scipy.linalg.schur(numpy.linalg.inv(z), sort='lhp')
+        [s,u,sdim] = scipy.linalg.schur(numpy.linalg.inv(z), sort='lhp')
 
         (m,n) = u.shape
         
